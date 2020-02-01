@@ -1,0 +1,32 @@
+{
+  "name": "@i62navpm/nats-streaming",
+  "version": "0.0.0",
+  "description": "Nats streaming project",
+  "keywords": [
+    "nats",
+    "node",
+    "nats-streaming"
+  ],
+  "author": "Manuel Navarro Pérez",
+  "homepage": "https://github.com/i62navpm/node-nats/tree/master/packages/nats-streaming#readme",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i62navpm/node-nats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/i62navpm/node-nats/issues"
+  },
+  "scripts": {
+    "dev": "rollup -cw",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "rollup": "^1.31.0",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "typescript": "^3.7.5"
+  }
+}
