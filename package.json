@@ -7,13 +7,12 @@
   ],
   "scripts": {
     "dev": "lerna run --parallel --scope @i62navpm/* dev",
-    "build": "lerna run --scope @i62navpm/* prepare",
+    "build": "lerna run --scope @i62navpm/* build",
     "lint": "eslint . --cache --fix --quiet --ext js,ts",
-    "test": "jest",
+    "test": "",
     "prepublish": "yarn build",
     "lerna:version": "lerna version",
-    "lerna:publish": "lerna publish from-git",
-    "lerna:pack": "lerna run pack"
+    "lerna:publish": "lerna publish from-git"
   },
   "repository": {
     "type": "git",

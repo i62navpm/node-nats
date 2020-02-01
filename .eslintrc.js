@@ -19,7 +19,6 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   rules: {
-    'linebreak-style': ['error', 'unix'],
     '@typescript-eslint/no-unused-vars': [
       'error',
       { argsIgnorePattern: 'next' },
