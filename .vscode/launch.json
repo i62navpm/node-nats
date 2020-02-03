@@ -22,7 +22,7 @@
       "type": "node",
       "request": "launch",
       "name": "Node 'nats-services'",
-      "program": "${workspaceFolder}/packages/nats-services/dist/index.es.js",
+      "program": "${workspaceFolder}/packages/nats-services/dist/index.js",
       "skipFiles": ["<node_internals>/**"],
       "stopOnEntry": true
     },
@@ -30,7 +30,7 @@
       "type": "node",
       "request": "launch",
       "name": "Node 'nats-streaming'",
-      "program": "${workspaceFolder}/packages/nats-streaming/dist/index.es.js",
+      "program": "${workspaceFolder}/packages/nats-streaming/dist/index.js",
       "skipFiles": ["<node_internals>/**"],
       "stopOnEntry": true
     },
@@ -39,7 +39,7 @@
       "request": "launch",
       "name": "Nodemon 'nats-services'",
       "runtimeExecutable": "nodemon",
-      "program": "${workspaceFolder}/packages/nats-services/dist/index.es.js",
+      "program": "${workspaceFolder}/packages/nats-services/dist/index.js",
       "restart": true,
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"]
@@ -49,7 +49,7 @@
       "request": "launch",
       "name": "Nodemon 'nats-streaming'",
       "runtimeExecutable": "nodemon",
-      "program": "${workspaceFolder}/packages/nats-streaming/dist/index.es.js",
+      "program": "${workspaceFolder}/packages/nats-streaming/dist/index.js",
       "restart": true,
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"]
