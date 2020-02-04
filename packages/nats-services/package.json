@@ -23,12 +23,12 @@
     "dev": "rollup -cw",
     "build": "rollup -c"
   },
+  "dependencies": {
+    "ts-nats": "^1.2.4"
+  },
   "devDependencies": {
     "rollup": "^1.31.0",
     "rollup-plugin-typescript2": "^0.25.3",
     "typescript": "^3.7.5"
-  },
-  "dependencies": {
-    "ts-nats": "^1.2.4"
   }
 }
