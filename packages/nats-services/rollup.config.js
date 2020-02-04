@@ -3,7 +3,11 @@ import pkg from './package.json'
 
 const deps = Object.keys(Object.assign({}, pkg.dependencies))
 
-const plugins = [typescriptPlugin()]
+const plugins = [
+  typescriptPlugin({
+    tsconfigOverride: { exclude: ['**/*.spec.*'] },
+  }),
+]
 
 export default [
   {
