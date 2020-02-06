@@ -94,6 +94,30 @@ describe("Test 'Publish-Subscribe' pattern", () => {
     }, 50);
   });
 
+  it('When a message is published only subjected with wildcard subscribers will receive the message', async done => {
+    const subject1 = 'test.pub-sub';
+    const subject2 = 'test';
+    const subjectWilcard = 'test.*';
+    const message = 'Test message';
+
+    const mockCb1 = jest.fn(() => Promise.resolve());
+    const mockCb2 = jest.fn(() => setTimeout(Promise.resolve, 0));
+
+    const service1 = await nc.subscribe(subjectWilcard, mockCb1);
+    const service2 = await nc.subscribe(subject2, mockCb2);
+
+    nc.publish(subject1, message);
+
+    setTimeout(() => {
+      expect(mockCb1.mock.calls.length).toBe(1);
+      expect(mockCb2.mock.calls.length).toBe(0);
+
+      service1.unsubscribe();
+      service2.unsubscribe();
+      done();
+    }, 50);
+  });
+
   afterAll(() => {
     nc.close();
   });
