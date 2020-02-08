@@ -3,6 +3,8 @@ import getConnection from '../src/index';
 
 describe("Test 'Publish-Subscribe' pattern", () => {
   let nc: Client;
+  let mockCb1: jest.Mock;
+  let mockCb2: jest.Mock;
 
   beforeAll(async () => {
     try {
@@ -10,6 +12,11 @@ describe("Test 'Publish-Subscribe' pattern", () => {
     } catch (err) {
       throw new Error('NATS server is disconnected');
     }
+  });
+
+  beforeEach(() => {
+    mockCb1 = jest.fn(() => Promise.resolve());
+    mockCb2 = jest.fn(() => setTimeout(Promise.resolve, 0));
   });
 
   it('NATS server is connected', () => {
@@ -76,9 +83,6 @@ describe("Test 'Publish-Subscribe' pattern", () => {
     const subject2 = 'test';
     const message = 'Test message';
 
-    const mockCb1 = jest.fn(() => Promise.resolve());
-    const mockCb2 = jest.fn(() => setTimeout(Promise.resolve, 0));
-
     const service1 = await nc.subscribe(subject1, mockCb1);
     const service2 = await nc.subscribe(subject2, mockCb2);
 
@@ -99,9 +103,6 @@ describe("Test 'Publish-Subscribe' pattern", () => {
     const subject2 = 'test';
     const subjectWilcard = 'test.*';
     const message = 'Test message';
-
-    const mockCb1 = jest.fn(() => Promise.resolve());
-    const mockCb2 = jest.fn(() => setTimeout(Promise.resolve, 0));
 
     const service1 = await nc.subscribe(subjectWilcard, mockCb1);
     const service2 = await nc.subscribe(subject2, mockCb2);
@@ -127,9 +128,6 @@ describe("Test 'Publish-Subscribe' pattern", () => {
     const subject2 = 'test';
     const subjectWilcard = 'test.>';
     const message = 'Test message';
-
-    const mockCb1 = jest.fn(() => Promise.resolve());
-    const mockCb2 = jest.fn(() => setTimeout(Promise.resolve, 0));
 
     const service1 = await nc.subscribe(subjectWilcard, mockCb1);
     const service2 = await nc.subscribe(subject2, mockCb2);
