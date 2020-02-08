@@ -89,8 +89,8 @@ describe("Test 'Publish-Subscribe' pattern", () => {
     nc.publish(subject1, message);
 
     setTimeout(() => {
-      expect(mockCb1.mock.calls.length).toBe(1);
-      expect(mockCb2.mock.calls.length).toBe(0);
+      expect(mockCb1.mock.calls.length).toBeTruthy();
+      expect(mockCb2.mock.calls.length).toBeFalsy();
 
       service1.unsubscribe();
       service2.unsubscribe();
@@ -110,8 +110,8 @@ describe("Test 'Publish-Subscribe' pattern", () => {
     nc.publish(subject1, message);
 
     setTimeout(() => {
-      expect(mockCb1.mock.calls.length).toBe(1);
-      expect(mockCb2.mock.calls.length).toBe(0);
+      expect(mockCb1.mock.calls.length).toBeTruthy();
+      expect(mockCb2.mock.calls.length).toBeFalsy();
 
       service1.unsubscribe();
       service2.unsubscribe();
@@ -135,8 +135,8 @@ describe("Test 'Publish-Subscribe' pattern", () => {
     nc.publish(subject1, message);
 
     setTimeout(() => {
-      expect(mockCb1.mock.calls.length).toBe(1);
-      expect(mockCb2.mock.calls.length).toBe(0);
+      expect(mockCb1.mock.calls.length).toBeTruthy();
+      expect(mockCb2.mock.calls.length).toBeFalsy();
 
       service1.unsubscribe();
       service2.unsubscribe();
