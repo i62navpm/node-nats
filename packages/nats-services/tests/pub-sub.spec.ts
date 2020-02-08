@@ -146,7 +146,8 @@ describe("Test 'Publish-Subscribe' pattern", () => {
     }, 50);
   });
 
-  afterAll(() => {
+  afterAll(async () => {
+    await nc.drain();
     nc.close();
   });
 });

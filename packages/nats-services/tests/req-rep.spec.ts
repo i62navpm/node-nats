@@ -79,7 +79,8 @@ describe("Test 'Request-Reply' pattern", () => {
     nc.close();
   });
 
-  afterAll(() => {
+  afterAll(async () => {
+    await nc.drain();
     nc.close();
   });
 });
