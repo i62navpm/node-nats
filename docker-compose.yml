@@ -7,6 +7,16 @@ services:
       - '8222:8222'
       - '6222:6222'
 
+  nat-server-streaming:
+    image: nats-streaming:latest
+    depends_on:
+      - nat-server
+    ports:
+      - '4223:4223'
+      - '8223:8223'
+    command:
+      - '-ns=nats://nat-server:4222'
+
   prometheus-nats-exporter:
     image: synadia/prometheus-nats-exporter:latest
     depends_on:
