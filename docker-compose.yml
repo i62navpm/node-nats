@@ -16,6 +16,7 @@ services:
       - '8223:8223'
     command:
       - '-ns=nats://nat-server:4222'
+      - '-m=8223'
 
   prometheus-nats-exporter:
     image: synadia/prometheus-nats-exporter:latest
@@ -24,6 +25,14 @@ services:
     command: http://nat-server:8222
     ports:
       - '7777:7777'
+
+  prometheus-nats-exporter-streaming:
+    image: synadia/prometheus-nats-exporter:latest
+    depends_on:
+      - nat-server-streaming
+    command: ['-channelz', '-serverz', 'http://nat-server-streaming:8223']
+    ports:
+      - '7778:7777'
 
   prometheus:
     image: prom/prometheus

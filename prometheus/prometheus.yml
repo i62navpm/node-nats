@@ -12,4 +12,8 @@ scrape_configs:
   - job_name: 'nats-test-server'
 
     static_configs:
-      - targets: ['prometheus-nats-exporter:7777']
+      - targets:
+          [
+            'prometheus-nats-exporter:7777',
+            'prometheus-nats-exporter-streaming:7777',
+          ]
