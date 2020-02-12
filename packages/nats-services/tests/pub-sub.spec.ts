@@ -119,10 +119,6 @@ describe("Test 'Publish-Subscribe' pattern", () => {
     }, 50);
   });
 
-  afterAll(() => {
-    nc.close();
-  });
-
   it('When a message is published only subjected with wildcard ">" subscribers will receive the message', async done => {
     const subject1 = 'test.pub-sub.main.topic';
     const subject2 = 'test';
