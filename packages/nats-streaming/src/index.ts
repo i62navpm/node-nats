@@ -1,5 +1,5 @@
-import { connect, Client, NatsConnectionOptions } from 'ts-nats';
+import { connect, StanOptions, Stan } from 'node-nats-streaming';
 
-export default function getConnection(options?: NatsConnectionOptions): Promise<Client> {
-  return connect(options);
+export default function getConnection(clusterID = 'test-cluster', clientID = 'test', options?: StanOptions): Stan {
+  return connect(clusterID, clientID, options);
 }
