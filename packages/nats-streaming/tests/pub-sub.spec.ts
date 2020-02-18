@@ -28,14 +28,6 @@ describe("Test 'Publish-Subscribe' streaming", () => {
     return;
   });
 
-  it('When a message is published only subjected with wildcard "*" subscribers will receive the message', () => {
-    return;
-  });
-
-  it('When a message is published only subjected with wildcard ">" subscribers will receive the message', () => {
-    return;
-  });
-
   afterAll(() => {
     stan.close();
   });
