@@ -63,5 +63,8 @@ dist/
 # next.js build output
 .next
 
+# coveralls reporter
+.coveralls.yml
+
 # junit output reporter
 junit.xml

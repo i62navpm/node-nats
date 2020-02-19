@@ -10,6 +10,7 @@
     "build": "lerna run --scope @i62navpm/* build",
     "lint": "eslint . --cache --fix --quiet --ext js,ts",
     "test": "jest",
+    "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "prepublish": "yarn build",
     "lerna:version": "lerna version",
     "lerna:publish": "lerna publish from-git"
@@ -37,6 +38,7 @@
     "@types/jest": "^25.1.1",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
+    "coveralls": "^3.0.9",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
