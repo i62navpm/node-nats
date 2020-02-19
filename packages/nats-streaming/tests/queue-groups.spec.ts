@@ -6,7 +6,7 @@ describe("Test 'Queue Groups' streaming", () => {
 
   beforeAll(() => {
     try {
-      stan = getConnection();
+      stan = getConnection('test-cluster', 'test');
     } catch (err) {
       throw new Error('NATS streaming server is disconnected');
     }
